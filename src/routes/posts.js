@@ -254,7 +254,7 @@ router.get('/:id', async (req, res) => {
  *       401:
  *         description: Authentication required
  */
-router.post('/', authenticateToken, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const { title, content, published = false } = req.body;
 
@@ -343,7 +343,7 @@ router.post('/', authenticateToken, async (req, res) => {
  *       404:
  *         description: Post not found
  */
-router.put('/:id', authenticateToken, async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const { title, content, published } = req.body;
@@ -444,7 +444,7 @@ router.put('/:id', authenticateToken, async (req, res) => {
  *       404:
  *         description: Post not found
  */
-router.delete('/:id', authenticateToken, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const { id } = req.params;
 
